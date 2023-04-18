@@ -7,12 +7,13 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
+                bat 'python --version'
             }
         }
         stage('Test') {
             steps {
                 echo "Testing.."
-                helloworld.py
+//                 helloworld.py
             }
         }
         stage('Deliver') {
