@@ -7,13 +7,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building.."
-                cd myapp
             }
         }
         stage('Test') {
             steps {
                 echo "Testing.."
-                cd myapp
                 python3 hello.py
             }
         }
