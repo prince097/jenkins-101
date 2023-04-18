@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Testing.."
-                python3 hello.py
+                python3 helloworld.py
             }
         }
         stage('Deliver') {
