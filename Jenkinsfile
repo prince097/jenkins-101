@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo "Building.."
                 cd myapp
-                choco install -r requirements.txt
+                pip install -r requirements.txt
             }
         }
         stage('Test') {
