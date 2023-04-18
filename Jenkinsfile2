@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    triggers {
+        pollSCM '* * * * *'
+    }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building.."
+                cd myapp
+                choco install -r requirements.txt
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+                cd myapp
+                bat 'hello.py'
+                bat 'hello.py --name=Brad'
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo 'Deliver....'
+                echo "doing delivery stuff.."
+            }
+        }
+    }
+}
